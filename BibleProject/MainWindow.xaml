@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="13*" />
-            <RowDefinition Height="7*" />
+            <RowDefinition Height="6*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -25,7 +25,15 @@
             <Button FontSize="24" Grid.Row="0" Grid.Column="3" Content="개발 진행중" HorizontalAlignment="Stretch" Background="White" />
         </Grid>
 
-        
+        <Grid Grid.Row="1">
+            <ListView HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -35,6 +43,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
         </Grid>
+        
 
 
     </Grid>

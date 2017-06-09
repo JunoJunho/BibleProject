@@ -16,7 +16,7 @@ namespace BibleProject
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
+            Console.WriteLine("Hello World");
             // Window winmain = new Window();
             // winmain.Title = "Main Window";
             // winmain.Show();
