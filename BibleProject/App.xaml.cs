@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+
 namespace BibleProject
 {
     /// <summary>
@@ -16,10 +17,11 @@ namespace BibleProject
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            Console.WriteLine("Hello World");
+
             // Window winmain = new Window();
             // winmain.Title = "Main Window";
             // winmain.Show();
+            
         }
 
     }

@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BibleProject"
+        xmlns:model="clr-namespace:BibleProject.Model"
         mc:Ignorable="d"
         Title="세광 중앙 교회 성경, 찬송가 뷰어" Height="960" Width="1280" ResizeMode="NoResize">
+    <Window.Resources>
+        <model:BibleCardList x:Key="BibleListKey"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -26,10 +30,13 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <ListView HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch">
+            <ListView HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" ItemsSource="{Binding Source={StaticResource BibleListKey}}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=BookNum}" Header="책" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Chapter}" Header="장" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Verse}" Header="절" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Content}" Header="내용" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -43,8 +50,9 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
         </Grid>
-        
+
 
 
     </Grid>
+    
 </Window>
