@@ -5,26 +5,56 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BibleProject.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListView HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" ItemsSource="{Binding BibleList}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=BookNum}" Header="책" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Chapter}" Header="장" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Verse}" Header="절" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Content}" Header="내용" />
-                </GridView>
-            </ListView.View>
+        <ListView HorizontalAlignment="Stretch" 
+                  Grid.Row="1" 
+                  VerticalAlignment="Stretch" 
+                  ItemsSource="{Binding BibleList}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  HorizontalContentAlignment="Stretch"
+                  >
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <!--<EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown"/>-->
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                 </Style>
             </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="  책  " Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate x:Name="bookTemplate">
+                                <TextBlock TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="{Binding Path=BookNum}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="  장  " Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate x:Name="chapterTemplate">
+                                <TextBlock TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="{Binding Path=Chapter}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="  절  " Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate x:Name="verseTemplate">
+                                <TextBlock TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="{Binding Path=Verse}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header=" 내용 " Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate x:Name="contentTemplate">
+                                <TextBlock HorizontalAlignment="Stretch" TextWrapping="WrapWithOverflow" Text="{Binding Path=Content}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
         </ListView>
     </Grid>
 </UserControl>
