@@ -7,7 +7,6 @@ using System.Collections.ObjectModel;
 
 namespace BibleProject.Model
 {
-    public class BibleCardList : ObservableCollection<BibleItem> { }
 
     public class BibleItem
     {
