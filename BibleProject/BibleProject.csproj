@@ -59,6 +59,9 @@
     <Compile Include="View\BibleControlView.xaml.cs">
       <DependentUpon>BibleControlView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BibleSearchView.xaml.cs">
+      <DependentUpon>BibleSearchView.xaml</DependentUpon>
+    </Compile>
     <Page Include="BibleTextWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +82,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\BibleControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BibleSearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
