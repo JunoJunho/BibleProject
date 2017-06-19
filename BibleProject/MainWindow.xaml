@@ -29,21 +29,6 @@
 
         <Grid Grid.Row="1">
             <views:BibleControlView x:Name="BibleControlView" Loaded="BibleControlView_InitializeBible"/>
-            <!--<ListView HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" ItemsSource="{Binding Source={StaticResource BibleListKey}}">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=BookNum}" Header="책" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Chapter}" Header="장" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Verse}" Header="절" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Content}" Header="내용" />
-                    </GridView>
-                </ListView.View>
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown"/>
-                    </Style>
-                </ListView.ItemContainerStyle>
-            </ListView>-->
         </Grid>
 
         <Grid Grid.Row="2">
