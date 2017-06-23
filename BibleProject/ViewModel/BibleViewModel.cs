@@ -20,7 +20,7 @@ namespace BibleProject.ViewModel
 
         public void InitializeBible()
         {
-            string connStr = "Data Source =192.168.1.71;Database=korHRV;User Id=root;Password=root";
+            string connStr = "Data Source =127.0.0.1;Database=korHRV;User Id=root;Password=root";
             string query = "select * from bible_korhrv";
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd = new MySqlCommand(query);

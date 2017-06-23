@@ -10,9 +10,10 @@
     
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="13*" />
-            <RowDefinition Height="6*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="7*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -28,10 +29,14 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <views:BibleControlView x:Name="BibleControlView" Loaded="BibleControlView_InitializeBible"/>
+            <views:BibleSearchView x:Name="BibleSearchView" />
         </Grid>
 
         <Grid Grid.Row="2">
+            <views:BibleControlView x:Name="BibleControlView" Loaded="BibleControlView_InitializeBible" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
