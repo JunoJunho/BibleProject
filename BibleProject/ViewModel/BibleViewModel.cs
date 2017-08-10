@@ -44,5 +44,20 @@ namespace BibleProject.ViewModel
             BibleList = bibleList;
             conn.Close();
         }
+
+        private void readFromDB()
+        {
+
+        }
+
+        private void readFromFile()
+        {
+
+        }
+
+        private void readChapterInfo()
+        {
+
+        }
     }
 }
