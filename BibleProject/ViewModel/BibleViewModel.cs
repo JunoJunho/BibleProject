@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+using System.IO;
+
 namespace BibleProject.ViewModel
 {
     public class BibleViewModel
@@ -20,6 +22,7 @@ namespace BibleProject.ViewModel
 
         public void InitializeBible()
         {
+            readChapterInfo();
             string connStr = "Data Source =127.0.0.1;Database=korHRV;User Id=root;Password=root";
             string query = "select * from bible_korhrv";
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -57,7 +60,12 @@ namespace BibleProject.ViewModel
 
         private void readChapterInfo()
         {
-
+            string fileName = "book_name.txt";
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+            foreach(string line in lines)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }
