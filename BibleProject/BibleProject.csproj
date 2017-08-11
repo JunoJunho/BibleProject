@@ -55,7 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\BIbleChapterItem.cs" />
     <Compile Include="Model\BibleResource.cs" />
+    <Compile Include="Model\MultiKeyDictionary.cs" />
     <Compile Include="ViewModel\BibleViewModel.cs" />
     <Compile Include="View\BibleControlView.xaml.cs">
       <DependentUpon>BibleControlView.xaml</DependentUpon>
