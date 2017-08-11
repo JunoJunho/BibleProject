@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\BibleResource.cs" />
     <Compile Include="ViewModel\BibleViewModel.cs" />
     <Compile Include="View\BibleControlView.xaml.cs">
       <DependentUpon>BibleControlView.xaml</DependentUpon>
@@ -117,6 +118,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="book_name.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
