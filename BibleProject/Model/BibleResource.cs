@@ -13,7 +13,7 @@ namespace BibleProject.Model
         private static readonly object _synclock = new object();
 
         // Attribute
-        Dictionary<String, BIbleChapterItem> bible = null; 
+        Dictionary<Tuple<String, int, int>, String> bible = null; 
 
         public static BibleResource Instance
         {
@@ -33,7 +33,7 @@ namespace BibleProject.Model
         // Constructor
         private BibleResource()
         {
-            this.bible = new Dictionary<string, BIbleChapterItem>();
+            this.bible = new Dictionary<Tuple<String, int, int>, String>();
         }
     }
 }

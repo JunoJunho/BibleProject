@@ -47,7 +47,7 @@ namespace BibleProject.Model
         }
     }
 
-    public class MultiKeyDictionary<K1, K2, K3, V> : Dictionary<K1, MultiKeyDictionary<K2, K3, V>>
+    public class TripleKeyDictionary<K1, K2, K3, V> : Dictionary<K1, MultiKeyDictionary<K2, K3, V>>
     {
         public V this[K1 key1, K2 key2, K3 key3]
         {

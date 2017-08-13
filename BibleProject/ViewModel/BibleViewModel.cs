@@ -22,7 +22,16 @@ namespace BibleProject.ViewModel
 
         public void InitializeBible()
         {
-            readChapterInfo();
+            Dictionary<int, String> chapDict = readChapterInfo();
+            ObservableCollection<BibleItem> bibleList = new ObservableCollection<BibleItem>();
+
+            readFromDB(ref bibleList, ref chapDict);
+
+            BibleList = bibleList;
+        }
+
+        private void readFromDB(ref ObservableCollection<BibleItem> bibleList, ref Dictionary<int, String> chapDict)
+        {
             string connStr = "Data Source =127.0.0.1;Database=korHRV;User Id=root;Password=root";
             string query = "select * from bible_korhrv";
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -31,26 +40,22 @@ namespace BibleProject.ViewModel
             conn.Open();
 
             MySqlDataReader reader = cmd.ExecuteReader();
-            ObservableCollection<BibleItem> bibleList = new ObservableCollection<BibleItem>();
-            
+
             try
             {
                 while (reader.Read())
                 {
-                    bibleList.Add(new Model.BibleItem(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetString(3)));
+                    int bookNum = reader.GetInt32(0);
+                    string bookName = chapDict[bookNum];
+                    bibleList.Add(new Model.BibleItem(bookName, reader.GetInt32(1), reader.GetInt32(2), reader.GetString(3)));
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            BibleList = bibleList;
+
             conn.Close();
-        }
-
-        private void readFromDB()
-        {
-
         }
 
         private void readFromFile()
@@ -58,14 +63,18 @@ namespace BibleProject.ViewModel
 
         }
 
-        private void readChapterInfo()
+        private Dictionary<int, String> readChapterInfo()
         {
             string fileName = "book_name.txt";
             string[] lines = System.IO.File.ReadAllLines(fileName);
+            Dictionary<int, String> chapDict = new Dictionary<int, string>();
             foreach(string line in lines)
             {
-                Console.WriteLine(line);
-            }
+                string[] tokens = line.Split();
+                chapDict.Add(int.Parse(tokens[0]), tokens[1]);
+            } // Chapter 정보 확인
+
+            return chapDict;
         }
     }
 }
