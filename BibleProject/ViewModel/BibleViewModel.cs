@@ -25,7 +25,8 @@ namespace BibleProject.ViewModel
             Dictionary<int, String> chapDict = readChapterInfo();
             ObservableCollection<BibleItem> bibleList = new ObservableCollection<BibleItem>();
 
-            readFromDB(ref bibleList, ref chapDict);
+            //readFromDB(ref bibleList, ref chapDict);
+            readFromFile(ref bibleList);
 
             BibleList = bibleList;
         }
@@ -58,9 +59,17 @@ namespace BibleProject.ViewModel
             conn.Close();
         }
 
-        private void readFromFile()
+        private void readFromFile(ref ObservableCollection<BibleItem> bibleList)
         {
-
+            string fileName = "bible.dat";
+            string inputLine;
+            StreamReader sr = new StreamReader(fileName, System.Text.Encoding.UTF8);
+            while((inputLine = sr.ReadLine()) != null)
+            {
+                string[] tokens = inputLine.Split('\t');
+                bibleList.Add(new Model.BibleItem(tokens[0], Int32.Parse(tokens[1]), Int32.Parse(tokens[2]), tokens[3]));
+            }
+            sr.Close();
         }
 
         private Dictionary<int, String> readChapterInfo()
