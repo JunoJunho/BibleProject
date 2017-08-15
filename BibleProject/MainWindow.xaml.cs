@@ -30,7 +30,7 @@ namespace BibleProject
 
         private void BibleControlView_InitializeBible(object sender, RoutedEventArgs e)
         {
-            BibleProject.ViewModel.BibleViewModel viewModelObject = new ViewModel.BibleViewModel();
+            BibleProject.ViewModel.BibleViewModel viewModelObject = ViewModel.BibleViewModel.Instance;
             viewModelObject.InitializeBible();
 
             BibleControlView.DataContext = viewModelObject;

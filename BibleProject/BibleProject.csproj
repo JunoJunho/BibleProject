@@ -57,6 +57,8 @@
     </ApplicationDefinition>
     <Compile Include="Model\BibleResource.cs" />
     <Compile Include="Model\MultiKeyDictionary.cs" />
+    <Compile Include="ViewModel\BibleControlViewModel.cs" />
+    <Compile Include="ViewModel\BibleSearchViewModel.cs" />
     <Compile Include="ViewModel\BibleViewModel.cs" />
     <Compile Include="View\BibleControlView.xaml.cs">
       <DependentUpon>BibleControlView.xaml</DependentUpon>

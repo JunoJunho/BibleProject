@@ -14,6 +14,10 @@ namespace BibleProject.ViewModel
 {
     public class BibleViewModel
     {
+
+        private static BibleViewModel _instance = new BibleViewModel();
+        public static BibleViewModel Instance { get { return _instance;  } }
+
         public ObservableCollection<BibleItem> BibleList
         {
             get;
