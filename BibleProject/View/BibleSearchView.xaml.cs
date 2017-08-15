@@ -24,5 +24,23 @@ namespace BibleProject.View
         {
             InitializeComponent();
         }
+
+        private void bookTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Return)
+            {
+                Console.WriteLine(bookTextBox.Text);
+            }
+        }
+
+        private void chapterTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void verseTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
