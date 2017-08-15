@@ -8,5 +8,12 @@ namespace BibleProject.ViewModel
 {
     class BibleSearchViewModel
     {
+        private static BibleSearchViewModel _instance = new BibleSearchViewModel();
+        public static BibleSearchViewModel Instance { get { return _instance; } }
+
+        public void searchBible(string book, int chapter, int verse)
+        {
+
+        }
     }
 }

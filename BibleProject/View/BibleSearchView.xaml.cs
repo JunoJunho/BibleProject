@@ -61,7 +61,8 @@ namespace BibleProject.View
                 // 올바르게 입력을 하였을 때만 검색 수행
                 if(bookText.Length > 0 && chapter > 0 && verse > 0 )
                 {
-
+                    ViewModel.BibleSearchViewModel searchViewModel = ViewModel.BibleSearchViewModel.Instance;
+                    searchViewModel.searchBible(bookText, chapter, verse);
                 }
 
                 // 모든 작업을 마친 후 초기화
