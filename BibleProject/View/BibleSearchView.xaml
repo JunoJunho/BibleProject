@@ -23,13 +23,13 @@
             <Label Content="장, 절 검색" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </Grid>
         <Grid Grid.Column="1" VerticalAlignment="Bottom">
-            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="50" KeyDown="bookTextBox_KeyDown" Name="bookTextBox"/>
+            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="50" KeyDown="BookTextBox_KeyDown" Name="bookTextBox"/>
         </Grid>
         <Grid Grid.Column="2" VerticalAlignment="Bottom">
-            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="50" KeyDown="chapterTextBox_KeyDown" Name="chapterTextBox"/>
+            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="50" KeyDown="ChapterTextBox_KeyDown" Name="chapterTextBox"/>
         </Grid>
         <Grid Grid.Column="3" VerticalAlignment="Bottom">
-            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="50" KeyDown="verseTextBox_KeyDown" Name="verseTextBox"/>
+            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="50" KeyDown="VerseTextBox_KeyDown" Name="verseTextBox"/>
         </Grid>
         <Grid Grid.Column="4" VerticalAlignment="Bottom">
             <Label Content="내용 검색" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center"/>

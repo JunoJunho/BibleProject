@@ -25,22 +25,51 @@ namespace BibleProject.View
             InitializeComponent();
         }
 
-        private void bookTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void BookTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Return)
             {
-                Console.WriteLine(bookTextBox.Text);
+                chapterTextBox.Focus();
             }
         }
 
-        private void chapterTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void ChapterTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.Key == Key.Return)
+            {
+                verseTextBox.Focus();
+            }
         }
 
-        private void verseTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void VerseTextBox_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Return)
+            {
+                string bookText = bookTextBox.Text;
+                int chapter = -1;
+                int verse = -1;
 
+                try
+                {
+                    Int32.TryParse(chapterTextBox.Text, out chapter);
+                    Int32.TryParse(verseTextBox.Text, out verse);
+                }catch(Exception ex)
+                {
+                    Console.WriteLine("DEBUG: " + ex.Message); // Do nothing
+                }
+
+                // 올바르게 입력을 하였을 때만 검색 수행
+                if(bookText.Length > 0 && chapter != -1 && verse != -1)
+                {
+
+                }
+
+                // 모든 작업을 마친 후 초기화
+                bookTextBox.Clear();
+                chapterTextBox.Clear();
+                verseTextBox.Clear();
+
+            }
         }
     }
 }
