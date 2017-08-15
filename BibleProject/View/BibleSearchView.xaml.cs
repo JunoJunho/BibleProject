@@ -62,7 +62,7 @@ namespace BibleProject.View
                 if(bookText.Length > 0 && chapter > 0 && verse > 0 )
                 {
                     ViewModel.BibleSearchViewModel searchViewModel = ViewModel.BibleSearchViewModel.Instance;
-                    searchViewModel.searchBible(bookText, chapter, verse);
+                    searchViewModel.SearchBible(bookText, chapter, verse);
                 }
 
                 // 모든 작업을 마친 후 초기화

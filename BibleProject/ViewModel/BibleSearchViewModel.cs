@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,15 @@ namespace BibleProject.ViewModel
         private static BibleSearchViewModel _instance = new BibleSearchViewModel();
         public static BibleSearchViewModel Instance { get { return _instance; } }
 
-        public void searchBible(string book, int chapter, int verse)
+        /// <summary>
+        /// 입력받은 책, 장, 절을 바탕으로 성경을 검색한다. 검색한 내용은 ControlViewModel로 값을 highlighting 한다
+        /// </summary>
+        /// <param name="book">책 e.g., 창, 출, 레</param>
+        /// <param name="chapter">장 e.g., 1, 2, 3</param>
+        /// <param name="verse">절 e.g., 1, 2, 3</param>
+        public void SearchBible(string book, int chapter, int verse)
         {
-
+            ObservableCollection<Model.BibleItem> BibleList = BibleViewModel.Instance.BibleList;
         }
     }
 }
