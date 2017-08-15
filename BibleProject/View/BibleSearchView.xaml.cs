@@ -59,7 +59,7 @@ namespace BibleProject.View
                 }
 
                 // 올바르게 입력을 하였을 때만 검색 수행
-                if(bookText.Length > 0 && chapter != -1 && verse != -1)
+                if(bookText.Length > 0 && chapter > 0 && verse > 0 )
                 {
 
                 }
