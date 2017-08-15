@@ -20,9 +20,24 @@ namespace BibleProject.View
     /// </summary>
     public partial class BibleControlView : UserControl
     {
+
+        private static BibleControlView _instance = new BibleControlView();
+        public static BibleControlView Instance { get { return _instance; } }
+
         public BibleControlView()
         {
             InitializeComponent();
+        }
+
+        public void SelectBibleItem(int index)
+        {
+            ListViewItem item = BibleListView.ItemContainerGenerator.ContainerFromIndex(index) as ListViewItem;
+            if(item != null)
+            {
+                BibleListView.ScrollIntoView(item);
+                item.IsSelected = true;
+                Keyboard.Focus(item);
+            }
         }
     }
 }

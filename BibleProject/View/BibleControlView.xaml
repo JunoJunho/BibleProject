@@ -17,6 +17,7 @@
                   ItemsSource="{Binding BibleList}"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   HorizontalContentAlignment="Stretch"
+                  Name="BibleListView"
                   >
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">

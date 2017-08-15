@@ -21,6 +21,14 @@ namespace BibleProject.ViewModel
         public void SearchBible(string book, int chapter, int verse)
         {
             ObservableCollection<Model.BibleItem> BibleList = BibleViewModel.Instance.BibleList;
+            var q = BibleList.IndexOf(
+                BibleList.Where(p => p.BookNum.Equals(book) && p.Chapter == chapter && p.Verse == verse).FirstOrDefault()
+                );
+            if (q != -1)
+            {// 장 절이 모두 맞아야함
+                BibleControlViewModel controlViewModel = BibleControlViewModel.Instance;
+                controlViewModel.SetFocusItem(q);
+            }
         }
     }
 }
